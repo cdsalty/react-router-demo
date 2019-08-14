@@ -7,7 +7,7 @@ const HomePage = props => {
   console.log(props);
   return (
     <div>
-      <button onClick={() => props.history.push('/topics')}>Topics </button>
+      {/* <button onClick={() => props.history.push('/topics')}>Topics </button> */}
       <h1>HOME PAGE</h1>
     </div>
   );
@@ -16,10 +16,8 @@ const HomePage = props => {
 const TopicsList = props => {
   return (
     <div>
-      <h1>TOPIC LIST PAGE</h1>
-      <Link to={`${props.match.url}/13`}>TO TOPIC 13</Link>
-      <Link to={`${props.match.url}/17`}>TO TOPIC 17</Link>
-      <Link to={`${props.match.url}/21`}>TO TOPIC 21</Link>
+      <h1>the T O P I C  L I S T  P A  G   E</h1>
+      {/* <Link to={`${props.match.url}/13`}>TO TOPIC 13</Link> */}
     </div>
   );
 };
@@ -27,7 +25,7 @@ const TopicsList = props => {
 const TopicDetail = props => {
   return (
     <div>
-      <h1>TOPIC DETAIL PAGE: {props.match.params.topicId}</h1>
+      <h1>ToPiC dEtAiL PaGe: {props.match.params.topicId}</h1>
     </div>
   );
 };
@@ -36,10 +34,8 @@ function App() {
   return (
     <div>
       <Route exact path='/' component={HomePage} />
-      <Route exact path='/blog/asdqw/topics' component={TopicsList} />
-      <Route path='/blog/asdqw/topics/:topicId' component={TopicDetail} />
-      <Route exact path='/blog/topics' component={TopicsList} />
-      <Route path='/blog/topics/:topicId' component={TopicDetail} />
+      <Route exact path='/topics' component={TopicsList} />
+      <Route path='/topics/:topicId' component={TopicDetail} />
     </div>
   );
 }
